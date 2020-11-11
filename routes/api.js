@@ -11,7 +11,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
 
-  router.post("/api/workout/range", (req, res) => {
+  router.get("/api/workout/range", (req, res) => {
     Workout.find({})
       .sort({ date: -1 })
       .then(dbWorkout => {
@@ -21,4 +21,6 @@ router.post("/api/workouts", ({ body }, res) => {
         res.status(400).json(err);
       });
   });
+
+  
 module.exports = router;
