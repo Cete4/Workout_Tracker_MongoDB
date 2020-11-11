@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const opts = {toJSON: {virtuals: true}};
 const Schema = mongoose.Schema;
 
 const workoutschema = new Schema({
@@ -38,7 +37,7 @@ const workoutschema = new Schema({
             }
         }
     ]
-}, opts);
+}, { toJSON: { virtuals: true });
 
 const Workout = mongoose.model("Workout", workoutschema);
 
