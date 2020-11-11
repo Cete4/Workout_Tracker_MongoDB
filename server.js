@@ -12,8 +12,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use(require("./routes/api.js"));
-app.use(require("./routes/html-routes.js"));
+// Import routes and give the server access to them.
+const routes = require('./routes/html-routes.js');
+const apiRoutes = require('./routes/api.js');
+app.use(routes);
+app.use(apiRoutes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethoddb", { useNewUrlParser: true });
 
