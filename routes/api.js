@@ -11,7 +11,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
 
-  router.get("/api/workout/range", (req, res) => {
+  router.post("/api/workout/range", (req, res) => {
     Workout.find({})
       .sort({ date: -1 })
       .then(dbWorkout => {
