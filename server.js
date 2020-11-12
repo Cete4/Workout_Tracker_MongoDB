@@ -18,7 +18,7 @@ const apiRoutes = require('./routes/api.js');
 app.use(routes);
 app.use(apiRoutes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethoddb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 
 app.listen(PORT, () => {
